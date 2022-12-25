@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #2c2c54;
+}
+
+.navigation{
+    position: relative;
+    width: 400px;
+    height: 60px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+}
+
+.navigation ul { 
+    display: flex;
+    width: 350px;
+}
+
+.navigation ul li {
+    list-style: none;
+    width: 70px;
+    height: 60px;
+    z-index: 2;
+}
+
+.navigation ul li a{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    text-decoration: none;
+}
+
+.navigation ul li a .icon{
+    position: relative;
+    display: block;
+    line-height: 65px;
+    font-size: 1.5em;
+    transition: 0.5s;
+    color: #40407a;
+}
+
+.navigation ul li.active a .icon{
+    transform: translateY(-32px);
+    color: #ff5252;
+}
+
+.navigation ul li a .label{
+    position: absolute;
+    background: #ff5252;
+    color: #fff;
+    padding: 2px 7px;   
+    border-radius: 12px;
+    font-size: 0.75em;
+    letter-spacing: 0.05em;
+    transition: 0.5s;
+    opacity: 0;
+    transform: translateY(15px);
+}
+
+.navigation ul li.active a .label{
+    transform: translateY(-4px);
+    opacity: 1;
+}
+
+.active-tab{
+    position: absolute;
+    top: -35px;
+    width: 70px;
+    height: 70px;
+    background: #fff;
+    border-radius: 50%;
+    z-index: 1;
+    transition: 0.5s;
+}
+
+.active-tab::before{
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: -28px;
+    width: 30px;
+    height: 30px;
+    background: transparent;
+    border-radius: 50%;
+    box-shadow: 15px 18px #fff;
+}
+
+.active-tab::after{
+    content: '';
+    position: absolute;
+    top: 5px;
+    right: -28px;
+    width: 30px;
+    height: 30px;
+    background: transparent;
+    border-radius: 50%;
+    box-shadow: -15px 18px #fff;
+}
